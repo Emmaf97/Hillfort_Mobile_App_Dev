@@ -30,9 +30,9 @@ class HillfortPresenter(view: BaseView) : BasePresenter(view) {
   val locationRequest = createDefaultLocationRequest()
 
   init {
-    if (view.intent.hasExtra("placemark_edit")) {
+    if (view.intent.hasExtra("hillfort_edit")) {
       edit = true
-      hillfort = view.intent.extras?.getParcelable<HillfortModel>("placemark_edit")!!
+      hillfort = view.intent.extras?.getParcelable<HillfortModel>("hillfort_edit")!!
       view.showHillfort(hillfort)
     } else {
       if (checkLocationPermissions(view)) {
